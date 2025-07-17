@@ -249,5 +249,44 @@ Gene_1	    Triticum_aestivum    12	5	...	8
 Gene_2	    Triticum_aestivum    7	3	...	2
 
 Note: This code will be run for four fasta input files, which will provide four .csv files for four species (crops). After this  accumlate these files in one file and add a column Label by Labeling 1 for Triticum aestivum, 2 for oryza_sativa, 3 for Hordium Volgare, 4 for Bracypodium Distachyon. This is a complete data set for four crops. 
+# RBH_Data_Extractor.py
+This script extracts and filters gene data for reciprocal best hit (RBH) orthologs from a complete dataset, creating a specialized subset for ortholog analysis.
 
+Input Files
+Common_Sequences.txt
+
+Contains tab-separated sequence IDs of RBH orthologs across all four species
+
+Generated from previous ortholog cluster identification step
+
+Complete_data_Set_4_Species.csv
+
+Comprehensive dataset containing all gene information
+
+Must include:
+
+Sequence_ID column (matching IDs in Common_Sequences.txt)
+
+Codon frequency data
+
+Species annotations
+
+Output File
+RBH_Filtered_Data_Set_4_Species.csv:
+
+Contains only genes identified as RBH orthologs
+
+Preserves all columns from the complete dataset
+
+Ready for downstream comparative analysis
+
+Usage
+bash
+python filter_rbh_data.py
+Dependencies
+Python 3
+
+pandas (pip install pandas)
+
+Expected Output
 
