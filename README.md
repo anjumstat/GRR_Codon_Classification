@@ -194,8 +194,60 @@ Comparative genomics studies.
 Evolutionary analysis of conserved gene families.
 
 Note: Replace paths/file names as needed. This links directly to your workflow and maintains reproducibility. Let me know if you’d like to add citations or parameter details!
+# Calculate_codon_frequencies.py
+Codon Frequency Calculator
+This script calculates absolute codon frequencies for coding sequences (CDS) in FASTA files across four species:
+
+Triticum aestivum (Wheat)
+
+Oryza sativa (Rice)
+
+Hordeum vulgare (Barley)
+
+Brachypodium distachyon
+
+Features
+Processes multiple FASTA files in batch mode
+
+Outputs CSV files with sequence IDs and absolute counts for all 64 codons
+
+Maintains consistent codon order (lexicographic) for easy comparison
+
+Input
+FASTA files (.fa or .fasta extension) containing CDS sequences
+
+Files should be placed in the specified input directory (E:\Bras\3_cond)
+
+Output
+For each input file:
+
+A CSV file named [filename]_codon_frequencies.csv containing:
+
+Sequence_ID: Original FASTA header
+
+Columns for all 64 codons (e.g., AAA, AAC, ..., TTT) with absolute counts
+
+Usage
+Place FASTA files in the input directory
+
+Run the script:
+
+bash
+python codon_frequency_calculator.py
+Output CSVs will be saved in [input_dir]/codon_frequencies/
+
+Dependencies
+Python 3
+
+Biopython (pip install biopython)
+
+pandas (pip install pandas)
+
+Example Output
+Sequence_ID Species	             AAA	AAC	...	TTT
+Gene_1	    Triticum_aestivum    12	5	...	8
+Gene_2	    Triticum_aestivum    7	3	...	2
+
+Note: This code will be run for four fasta input files, which will provide four .csv files for four species (crops). After this  accumlate these files in one file and add a column Label by Labeling 1 for Triticum aestivum, 2 for oryza_sativa, 3 for Hordium Volgare, 4 for Bracypodium Distachyon. This is a complete data set for four crops. 
 
 
-
-Application
-Designed for comparative genomics to identify orthologs across the four species. Adaptable to other datasets by modifying file paths/species names.
