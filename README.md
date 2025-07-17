@@ -291,4 +291,113 @@ pandas (pip install pandas)
 Expected Output
 # Final data
 Now we have two .csv files one contains complete data for all genes across four species named Complete_data_Set_4_Species.csv, which have a total number of 253, 076 rows. Second .csv file named RBH_Filtered_Data_Set_4_Species.csv, which contains 25,152 orthologous genes data across four species. Now these two data sets will be proceed for model fitting. 
+# GRR_MLP_Variants_Analysis.py - The code to produce final Comparative Analysis of Regularization Methods for Species Classification based on Complete Data set and RBH data set. 
+# Note: Delete first two columns and name third column as "Species" of .csv input files before running the code.  
+
+This script performs a comprehensive comparison of multiple regularization approaches, including a novel Gradient-Responsive Regularizer (GRR), for classifying plant species based on codon usage patterns.
+
+Key Features
+Novel GRR Implementation: Custom regularizer that dynamically adjusts L1/L2 penalties based on gradient behavior
+
+Six Regularization Methods Compared:
+
+Novel GRR (Our proposed method)
+
+Adaptive L1L2
+
+Fixed L1
+
+Fixed L2
+
+ElasticNet
+
+Standard MLP
+
+Hyperparameter Optimization: Evaluates multiple learning rates and batch sizes
+
+Robust Evaluation: 10-fold cross validation with comprehensive metrics
+
+Input Requirements
+Complete_data_Set_4_Species.csv containing:
+
+Sequence IDs
+
+Codon frequency data (64 features)
+
+Species labels (1-4)
+
+Output Structure
+text
+MLP_RBH_all3/
+├── lr_[rate]_bs_[size]/
+│   ├── results_Novel/
+│   ├── results_Adaptive/
+│   ├── ... (other methods)
+│   │   ├── Best_Model_Metrics.csv
+│   │   ├── Average_Metrics.csv
+│   │   ├── Fold_Metrics_Detailed.csv
+│   │   ├── Training_Time.csv
+│   │   ├── Confusion_Matrix.png
+│   │   └── Best_*_Model.h5
+└── (analysis files)
+Key Metrics Reported
+For each method and hyperparameter combination:
+
+Accuracy, Precision, Recall, F1, MCC
+
+Training time
+
+Validation curves
+
+Test set confusion matrices
+
+Statistical Tests Included
+Paired t-tests
+
+Friedman test
+
+Wilcoxon signed-rank test
+
+Usage
+Configure paths in the script:
+
+python
+DATA_PATH = 'E:/GRR/Complete_data_Set_4_Species.csv'
+BASE_DIR = 'E:/GRR/MLP_RBH_all3'
+Adjust hyperparameter search space if needed:
+
+python
+LEARNING_RATES = [0.01, 0.001, 0.0001]
+BATCH_SIZES = [32, 64, 128, 256]
+Run the script:
+
+bash
+python species_classification_analysis.py
+Dependencies
+Python 3.7+
+
+TensorFlow 2.x
+
+scikit-learn
+
+pandas
+
+NumPy
+
+Matplotlib
+
+Seaborn
+
+SciPy
+
+Novel GRR Implementation Details
+The Gradient-Responsive Regularizer features:
+
+Dynamic adaptation based on gradient variance
+
+Feature-specific modulation
+
+Stability-aware penalty adjustment
+
+Historical tracking of regularization parameters
 
