@@ -140,6 +140,62 @@ Dependencies
 Python 3
 
 pandas (pip install pandas)
+# To_Find_common_sequences_across_4_Species
+This script identifies conserved orthologous gene clusters across four species using reciprocal best hit (RBH) results from BLASTn. It uses graph theory (NetworkX) to group genes shared among:
+
+Triticum aestivum (Wheat)
+
+Oryza sativa (Rice)
+
+Hordeum vulgare (Barley)
+
+Brachypodium distachyon
+
+Input
+RBH files: Text files (e.g., RBH_Brach_Hordeum.txt) generated from the previous RBH analysis (one file per species pair).
+
+Each line must contain two sequence IDs (e.g., Oryza_XYZ123 and Triticum_ABC456).
+
+Output
+Common_Sequences.txt: A tab-separated file listing gene clusters where all four species are represented (one cluster per line).
+
+Methodology
+Graph Construction:
+
+Genes are nodes, and RBH pairs are undirected edges.
+
+Cluster Detection:
+
+Connected components in the graph represent orthologous groups.
+
+Only clusters containing ≥1 gene from all four species are retained.
+
+Usage
+Place all RBH files in the specified directory (E:/CDS/Best_Hits/).
+
+Run the script:
+
+bash
+python ortholog_clusters.py
+Output will list conserved clusters (e.g., Oryza_G1 Triticum_G2 Hordeum_G3 Brach_G4).
+
+Dependencies
+Python 3
+
+networkx (pip install networkx)
+
+Example Output
+text
+Oryza_XYZ123  Triticum_ABC456  Hordeum_DEF789  Brach_GHI012  
+Oryza_XYZ124  Triticum_ABC457  Hordeum_DEF790  Brach_GHI013  
+Applications
+Comparative genomics studies.
+
+Evolutionary analysis of conserved gene families.
+
+Note: Replace paths/file names as needed. This links directly to your workflow and maintains reproducibility. Let me know if you’d like to add citations or parameter details!
+
+
 
 Application
 Designed for comparative genomics to identify orthologs across the four species. Adaptable to other datasets by modifying file paths/species names.
