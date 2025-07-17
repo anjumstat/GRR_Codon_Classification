@@ -105,3 +105,41 @@ To adapt for different file paths:
 Modify these variables in the script:
 input_folder = "path/to/blast_results"  # Line 7
 output_folder = "path/to/rbh_output"   # Line 8
+# RBH_2_Species.py
+This script identifies reciprocal best hits (RBH) from BLASTn results across four species:
+
+Triticum aestivum (Wheat)
+
+Oryza sativa (Rice)
+
+Hordeum vulgare (Barley)
+
+Brachypodium distachyon
+
+RBH pairs are used to infer putative orthologous genes between species.
+
+# Input
+Tab-separated BLASTn outputs for all pairwise comparisons (e.g., Triticum_vs_Oryza.txt, Oryza_vs_Triticum.txt, etc.).
+
+Files must include standard BLAST columns:
+Query_ID, Subject_ID, Identity, Alignment_Length, E-value, Bit_Score, etc.
+
+# Output
+similar_sequences.csv: A consolidated file of reciprocal best hits with alignment statistics.
+
+Usage
+Edit paths in the script to point to your input/output folders.
+
+Run the script:
+
+bash
+python reciprocal_best_hits.py
+Repeat for all species pairs (e.g., Wheat-Barley, Barley-Brachypodium, etc.).
+
+Dependencies
+Python 3
+
+pandas (pip install pandas)
+
+Application
+Designed for comparative genomics to identify orthologs across the four species. Adaptable to other datasets by modifying file paths/species names.
