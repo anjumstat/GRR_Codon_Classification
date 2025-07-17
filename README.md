@@ -292,7 +292,7 @@ Expected Output
 # Final data
 Now we have two .csv files one contains complete data for all genes across four species named Complete_data_Set_4_Species.csv, which have a total number of 253, 076 rows. Second .csv file named RBH_Filtered_Data_Set_4_Species.csv, which contains 25,152 orthologous genes data across four species. Now these two data sets will be proceed for model fitting. 
 # GRR_MLP_Variants_Analysis.py - The code to produce final Comparative Analysis of Regularization Methods for Species Classification based on Complete Data set and RBH data set. 
-# Note: Delete first two columns and name third column as "Species" of .csv input files before running the code.  
+Note: Delete first two columns and name third column as "Species" of .csv input files before running the code. Also due to limitations from github I have splitted Complete Data set file in two parts, first part named Complete_data_Set_4_Species_part1.csv and second part named Complete_data_Set_4_Species_part1.csv. Combine these files before running code on complete data set.   
 
 This script performs a comprehensive comparison of multiple regularization approaches, including a novel Gradient-Responsive Regularizer (GRR), for classifying plant species based on codon usage patterns.
 
