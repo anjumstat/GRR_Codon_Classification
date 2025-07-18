@@ -400,4 +400,13 @@ Feature-specific modulation
 Stability-aware penalty adjustment
 
 Historical tracking of regularization parameters
+# Learning_rate_bach_Size_all_accuracies_comparisons.py
+To generate Figures 6 and 7, please execute the script Learning_rate_batch_Size_all_accuracies_comparisons.py.
 
+The script requires the following input files:
+
+Accuracies_based_on_complete_data.csv - containing model accuracy results from the complete dataset
+
+Accuracies_based_on_RBH_data.csv - containing model accuracy results from the RBH (Reciprocal Best Hits) dataset
+
+Note: These CSV files aggregate the model performance metrics across all combinations of batch sizes and learning rates from the model fitting process.
