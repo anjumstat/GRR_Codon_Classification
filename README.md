@@ -422,6 +422,6 @@ Input Data Requirements:
 The analysis requires two consolidated metric files:
 Fold_Metrics_Detailed_comp.csv - Complete dataset metrics
 Fold_Metrics_Detailed_RBH.csv - RBH-filtered dataset metrics
-These CSV files aggregate cross-validation results from model fitting runs executed via GRR_MLP_Variants_Analysis.py, combining outputs across all experimental conditions for both complete and RBH-filtered datasets.
+These CSV files aggregate cross-validation results from model fitting runs executed via GRR_MLP_Variants_Analysis.py, by combining outputs across all experimental conditions for both complete and RBH-filtered datasets.
 
 
